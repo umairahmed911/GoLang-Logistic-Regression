@@ -1,4 +1,4 @@
-Titanic Survival Prediction using Logistic Regression in Go
+## Titanic Survival Prediction using Logistic Regression in Go
 This project implements a logistic regression model from scratch in Go (Golang) to predict passenger survival from the Titanic dataset based on age-related features. The model includes custom feature engineering, regularized gradient descent, and optimal threshold selection.
 
 📂 Project Structure
