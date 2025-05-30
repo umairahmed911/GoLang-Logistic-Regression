@@ -40,9 +40,13 @@ cd titanic-logistic-golang
 
 # Run the Go program
 go run titanic.go
+```
+
 📌 Make sure the titanic (1).csv file is in the same directory as main.go.
 
-🔍 Engineered Features
+---
+
+## Engineered Features
 Feature	Description
 age	Raw age value
 age²	Non-linear feature
@@ -51,10 +55,10 @@ isChild	Binary: 1 if age ≤ 12
 isTeen	Binary: 1 if 13 ≤ age ≤ 17
 isElderly	Binary: 1 if age ≥ 60
 
-📊 Example Output
-text
-Copy
-Edit
+---
+
+## Example Output
+```
 === Dataset Statistics ===
 Total records: 891
 Survivors: 342 (38.4%)
@@ -75,8 +79,9 @@ Hyperparameter	Value
 Learning Rate	0.1
 Epochs	1000
 Regularization	0.01
+```
 
-👥 Authors
+## 👥 Authors
 👨‍💻 Umair Ahmed — F23607025
 
 👨‍💻 M. Anas Bhatti — F23607044
@@ -86,6 +91,7 @@ Regularization	0.01
 🎓 BS Artificial Intelligence - Spring 2025
 🧪 National University of Technology, Pakistan
 
+---
 
 🌟 Star this Repo
 If you found this project helpful or interesting, consider giving it a ⭐ on GitHub!
