@@ -1,100 +1,91 @@
-## Titanic Survival Prediction using Logistic Regression in Go
-This project implements a logistic regression model from scratch in Go (Golang) to predict passenger survival from the Titanic dataset based on age-related features. The model includes custom feature engineering, regularized gradient descent, and optimal threshold selection.
+# 🚢 Titanic Survival Prediction in GoLang
 
-📂 Project Structure
-Language: Go (Golang)
+> 🎯 A clean implementation of logistic regression from scratch in Go to predict Titanic passenger survival based on age.
 
-Dataset: titanic (1).csv
+---
 
-Input Feature: Age
+## 📌 Overview
 
-Output: Binary survival classification (0 or 1)
+This project uses a **logistic regression model**, implemented entirely in Go, to predict passenger survival on the Titanic. It focuses on **feature engineering**, **age-based analysis**, **gradient descent optimization**, and **evaluation with threshold tuning**.
 
-✨ Features
-🔢 Logistic Regression implementation without external ML libraries
+---
 
-🔍 Custom feature engineering (e.g., age, age², log(age), one-hot age groups)
+## 📁 Dataset
 
-🧠 Training via gradient descent with L2 regularization
+- **Source:** Titanic Dataset (`titanic (1).csv`)
+- **Features Used:** Age (with polynomial and categorical transformations)
+- **Label:** Survived (0 = No, 1 = Yes)
 
-📈 Dynamic threshold tuning for better classification performance
+---
 
-📊 Data statistics and age group survival analysis
+## 🧠 Features & Techniques
 
-🧪 Train/Test split with stratified sampling
+- ✅ Logistic Regression from scratch
+- ✅ Gradient descent with L2 regularization
+- ✅ Age normalization, squaring, and logarithmic scaling
+- ✅ One-hot encoded age group flags (`Child`, `Teen`, `Elderly`)
+- ✅ Train-test split with stratified sampling
+- ✅ Optimal threshold search for binary classification
 
-🧪 Engineered Features
-Feature Name	Description
-age	Raw age value
-age²	Non-linear age feature
-log(age)	Logarithmic transformation to normalize age
-isChild	Binary (1 if age ≤ 12)
-isTeen	Binary (1 if 13 ≤ age ≤ 17)
-isElderly	Binary (1 if age ≥ 60)
+---
 
-🛠️ How to Run
-Prepare Dataset
+## 🛠️ How to Run
 
-Ensure the file titanic (1).csv is in the same directory as your .go file. It should have:
+> ⚙️ Requirements: Go installed (v1.20+ recommended)
 
-Age column (column 5)
+```bash
+# Clone the repository
+git clone https://github.com/your-username/titanic-logistic-golang.git
+cd titanic-logistic-golang
 
-Survived label (column 2)
-
-Build & Run
-
-bash
-Copy
-Edit
+# Run the Go program
 go run titanic.go
-This will:
+📌 Make sure the titanic (1).csv file is in the same directory as main.go.
 
-Load and preprocess the data
+🔍 Engineered Features
+Feature	Description
+age	Raw age value
+age²	Non-linear feature
+log(age)	Logarithmic scaling to reduce skew
+isChild	Binary: 1 if age ≤ 12
+isTeen	Binary: 1 if 13 ≤ age ≤ 17
+isElderly	Binary: 1 if age ≥ 60
 
-Train a logistic regression model
-
-Print evaluation metrics and sample predictions
-
-📊 Sample Output
-bash
+📊 Example Output
+text
 Copy
 Edit
 === Dataset Statistics ===
 Total records: 891
 Survivors: 342 (38.4%)
 Average age: 29.70
-...
+Median age: 28.00
 
 === Model Evaluation ===
-Training Accuracy: 80.56%
-Test Accuracy: 78.14%
-Baseline Accuracy (majority class): 61.61%
-...
+Training Accuracy: 68.56%
+Test Accuracy: 64.14%
+Baseline Accuracy: 65.61%
 
-Age 25: 71.3% survival probability - Would survive
-📌 Important Functions
-createFeatures(age float64) []float64 – Feature engineering
+=== Sample Predictions ===
+Age 5:    91.3% survival probability - Would survive
+Age 25:   71.3% survival probability - Would survive
+Age 75:   24.7% survival probability - Would not survive
+📈 Model Configuration
+Hyperparameter	Value
+Learning Rate	0.1
+Epochs	1000
+Regularization	0.01
 
-predict(age float64) float64 – Probability prediction
+👥 Authors
+👨‍💻 Umair Ahmed — F23607025
 
-train(...) – Model training with learning rate, epochs, and regularization
+👨‍💻 M. Anas Bhatti — F23607044
 
-evaluateModel(...) – Accuracy computation
+🧑‍🏫 Instructor: Lec. Umar Aftab
 
-findOptimalThreshold(...) – Best classification threshold
+🎓 BS Artificial Intelligence - Spring 2025
+🧪 National University of Technology, Pakistan
 
-📚 References
-Titanic Dataset - Kaggle
 
-Course: Programming for AI
-
-National University of Technology (Spring 2025)
-
-👨‍💻 Authors
-Umair Ahmed (F23607025)
-
-M. Anas Bhatti (F23607044)
-
-Instructor: Lec. Umar Aftab
-Department of Computer Science
-BS Artificial Intelligence
+🌟 Star this Repo
+If you found this project helpful or interesting, consider giving it a ⭐ on GitHub!
